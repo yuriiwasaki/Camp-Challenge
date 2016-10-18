@@ -1,8 +1,8 @@
-<?php
 
-    $num = 0;
-    for ($i= 1; $i < 101 ; ++$i){
-         $num += $i;
-        echo $num.'<br>';
+<?php
+    //Aを30個連結する処理
+    $num = 'A';
+    for ($i='0'; $i < 30; ++$i){
+        echo $num;
     }
 ?>
