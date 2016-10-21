@@ -1,0 +1,15 @@
+<?php
+
+$global_number=5;
+    function check_scope(){
+        static $local_number=1;
+        global $global_number;
+        echo
+
+
+
+    }
+
+//global宣言ユーザー定義関数の外にある変数を関数の中で使いたかったらgrobalと記述
+//static宣言
+?>
