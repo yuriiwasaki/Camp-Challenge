@@ -1,28 +1,55 @@
 <?php
 
-/*$file = 'ouyou10.txt';
-$file1 = fopen('$file','a').'<br>'; //日時、開始
-$file_txt = fgets('$file1','a'); 追記*/
+/*$file = fopen('ouyou10.txt'.'w');
+fwrite($file,'アイウエオ');
+fclose($file);*/
 
-$file = 'ouyou10.txt';
-$today = date('Y/m/d/H:i:s');
-file_put_contents('$file','$today','開始');
+// ファイルを書き込みモードで開く
+$fp = fopen('ouyou10.txt', 'a'); //xamppの設定の問題？
+// 書き込み操作 - １行書き込み
+fwrite($fp, '開始'. date('Y/m/d/ H:i:s'));
+// ファイルを閉じる
+fclose($fp);
 
+/*$fp = fopen('ouyou10.txt', 'r');
+// 書き込み操作 - １行書き込み
+fread($fp, '開始'.date('Y/m/d/H:i:s'));
+// ファイルを閉じる
+fclose($fp);*/
 
-
-$sales = array('f1'=>'800', 'f2'=>'320' ,'f3'=>'120' );
+$sales = array( "f1" =>"800", "f2" => "320", "f3"=>"120" );
 ksort($sales);
 print_r($sales);
 
-file_get_contents('$file');
 
-echo file_put_contents('$file','$today','終了');
+$fp = fopen('ouyou10.txt', 'a');
+// 書き込み操作 - １行書き込み
+fwrite($fp, '終了'.date('Y/m/d/H:i:s'));
+// ファイルを閉じる
+fclose($fp);
 
 
-fclose($file1).'<br>'; //日時、終了
+/*$fp = fopen('ouyou10.txt', 'a');
+// 書き込み操作 - １行書き込み
+fwrite($fp, '終了'. date('Y/m/d/H:i:s'));
+// ファイルを閉じる
+fclose($fp);*/
+
+//始まりと終わりの日時
+
+
+
+/*$fp = fopen('ouyou10.txt', 'w'); //xamppの設定の問題？
+// 書き込み操作 - １行書き込み
+fwrite($fp, '終了');
+// ファイルを閉じる
+fclose($fp);*/
+
+
+//echo $file = file_get_contents('$file');
+
 
 //何らか変数代入
-
 
 /*次の処理を実現してください。 期限:5日
 １０．紹介していないPHPの組み込み関数を利用して、処理を作成してください。
@@ -31,7 +58,7 @@ PHPの公式サイトから関数を選び、実際にロジックを作成し�
 また、この処理を作成するに当たり、下記を必ず実装してください。
 ①処理の経過を書き込むログファイルを作成する。
 ②処理の開始、終了のタイミングで、ログファイルに開始・終了の書き込みを行う。
-③書き込む内容は、「日時　状況（開始・終了）」の形式で書き込む。
+③書き込む内容は、「日時と状況（開始・終了）」の形式で書き込む。
 ④最後に、ログファイルを読み込み、その内容を表示してください。
 
 使ってみる関数
