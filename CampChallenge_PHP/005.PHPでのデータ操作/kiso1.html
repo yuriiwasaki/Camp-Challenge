@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>データ操作</title>
+    </head>
+
+    <body>
+
+        <h1>入力フォーム</h1>
+        <form action="./sample.php"method="post">
+        名前:<input type="text" name="txtName"> <br>
+        <p>性別</p>
+        <ul>
+            <li><input type="checkbox" name="chkTest">female</li><br>
+            <li><input type="checkbox" name="chkTest">male</li><br>
+            <li><input type="checkbox" name="chkTest">other</li>
+        </ul>
+        <p>趣味</p>
+        <textarea name="mulText"> </textarea> <br>
+        <textarea name="mulText"> </textarea> <br>
+        <textarea name="mulText"> </textarea> <br>
+        <form enctype="multipart/form-data" action="sample.php" method="post">  </form>
+        ファイル選択：<input name="userfile" type="file"/>
+        <input type="submit" name="btnSubmit">
+
+
+
+    </body>
+</html>
