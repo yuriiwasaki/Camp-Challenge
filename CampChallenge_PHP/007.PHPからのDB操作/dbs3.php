@@ -1,7 +1,7 @@
 <?php
 try{
         $pdo_object = new PDO('mysql: host=localhost;dbname=Challenge_db;charset=utf8','yuri','yuri1988');
-        $sql = "SELECT * FROM profiles WHERE profilesID=1";
+        $sql = "SELECT * FROM profiles";//SQL文を格納した文字列 を定義 SELECT文
 
         $query = $pdo_object -> prepare($sql);
 
@@ -9,17 +9,21 @@ try{
 
         $result = $query -> fetchall(PDO::FETCH_ASSOC);
 
-    }catch(PDOExeption $Exception){
+}catch(PDOExeption $Exception){
         die('接続に失敗しました;'.$Exeption -> getMessage());
-    }
+}
 
 $pdo_object = null;
 
-        foreach ($result as $key => $value) {
-            echo '<br>';
+
+    foreach ($result as $key => $value) {
+        echo '<br>';
         foreach ($value as $key => $value2) {
             echo $key,$value2.'<br>';
         }
-        }
-        //ソース修正で良く出る
+    }
+
+//var_dump($result);
+
+
 ?>
